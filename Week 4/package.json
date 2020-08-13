@@ -7,13 +7,17 @@
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server",
-    "scss":"node-sass -o css/ css/"
-  },
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.2.2",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "parallelshell": "^3.0.2"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
